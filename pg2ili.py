@@ -38,6 +38,11 @@ IGNORE_ATTRIBUTES = ["t_ili_tid"]  # Primary keys are needed for handling data, 
 
 
 class PG2ILI:
+
+    ATTRIBUTENAME_MAP = {
+        'geom': "geometrie"
+    }
+
     PG_TYPES = {
         'smallint': "NUMERIC",
         'integer': "NUMERIC",
@@ -207,11 +212,14 @@ class PG2ILI:
             if not line or line == ");": continue
             if DEBUG: print("[parse_pg_table]", line)
 
-            field_name = line.split(" ")[0]
+            original_field_name = line.split(" ")[0]
+            
+            field_name = self.ATTRIBUTENAME_MAP.get(original_field_name, original_field_name)
+
             if field_name in IGNORE_ATTRIBUTES:
                 continue
 
-            line = line[len(field_name)+1:]  # Preserve the rest
+            line = line[len(original_field_name)+1:]  # Preserve the rest
             ili_type = ""
             for k,v in self.PG_TYPES_COMPILED.items():
                 result = k.search(line)

@@ -10,16 +10,15 @@ VERSION "2019-12-11" =
     CLASS clima =
       id : MANDATORY 1 .. 2147483647;
       nombre : MANDATORY TEXT*100;
-      geom : MANDATORY GM_MultiSurface3D;
+      geometrie : MANDATORY GM_MultiSurface3D;
     END clima;
 
     CLASS clima_bl =
       id : MANDATORY 1 .. 2147483647;
       nombre : MANDATORY TEXT*255;
-      geom : MANDATORY Undefined_Geometry;
+      geometrie : MANDATORY Undefined_Geometry;
     END clima_bl;
 
   END My_Topic;
 
 END My_Model.
-    
