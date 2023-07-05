@@ -1,18 +1,25 @@
 INTERLIS 2.3;
-    
+
 MODEL My_Model (en)
 AT "mailto:gcarrillo@linuxmail.org"
 VERSION "2019-12-11" =
   IMPORTS ISO19107_PLANAS_V1;
 
   TOPIC My_Topic =
-      
+
     CLASS clima =
       id : MANDATORY 1 .. 2147483647;
       nombre : MANDATORY TEXT*100;
-      geom : MANDATORY ISO19107_PLANAS_V1.GM_MultiSurface3D;
+      geom : MANDATORY GM_MultiSurface3D;
     END clima;
 
+    CLASS clima_bl =
+      id : MANDATORY 1 .. 2147483647;
+      nombre : MANDATORY TEXT*255;
+      geom : MANDATORY Undefined_Geometry;
+    END clima_bl;
+
   END My_Topic;
-      
+
 END My_Model.
+    

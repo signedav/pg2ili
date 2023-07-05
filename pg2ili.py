@@ -82,8 +82,10 @@ class PG2ILI:
         "multicurve": {"2d": "GM_MultiCurve2D", "3d": "GM_MultiCurve3D"},
         "multilinestring": {"2d": "GM_MultiCurve2D", "3d": "GM_MultiCurve3D"},
         "multisurface": {"2d": "GM_MultiSurface2D", "3d": "GM_MultiSurface3D"},
-        "multipolygon": {"2d": "GM_MultiSurface2D", "3d": "GM_MultiSurface3D"}
+        "multipolygon": {"2d": "GM_MultiSurface2D", "3d": "GM_MultiSurface3D"},
+        "geometry": {"2d": "Undefined_Geometry", "3d": "Undefined_Geometry"}
     }
+
     NOT_NULL = "NOT NULL"
 
     NUMERIC_RANGE = "1 .. 2147483647"
@@ -341,7 +343,8 @@ class PG2ILI:
             for k,v in self.GEOMETRY_TYPES.items():
                 if t.lower().startswith(k):
                     self.any_geometry = True
-                    res = "{}.{}".format(GEOMETRY_MODEL_NAME, v["3d"] if PREFER_3D else v["2d"])
+                    #res = "{}.{}".format(GEOMETRY_MODEL_NAME, v["3d"] if PREFER_3D else v["2d"])
+                    res = v["3d"] if PREFER_3D else v["2d"]
                     break
         else:
             res = ili_type
