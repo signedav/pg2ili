@@ -670,6 +670,8 @@ CREATE TABLE descripcion_observacion (
     observaciones character varying(255),
     id_tipo_observacion integer NOT NULL,
     aux character varying(255)
+    single_char character;
+    single_character char;
 );
 
 

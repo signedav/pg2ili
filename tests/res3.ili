@@ -212,6 +212,8 @@ VERSION "2019-12-11" =
       uso_actual : TEXT*100;
       limitante_uso : TEXT*100;
       nombre_cultivos_pastos : TEXT*255;
+      id_clase_agrologica : MANDATORY TEXT*255;
+      id_subclase_agrologica : MANDATORY TEXT*255;
       ancho_gritas : 0 .. 9999999999;
       profundidad_gritas : 0 .. 9999999999;
       volumen_plintita : 0 .. 9999999999;
@@ -220,6 +222,8 @@ VERSION "2019-12-11" =
       observaciones : TEXT*255;
       id_tipo_observacion : MANDATORY 0 .. 9999999999;
       aux : TEXT*255;
+      single_char : TEXT*1;
+      single_character : TEXT*1;
       UNIQUE numero_observacion;
     END descripcion_observacion;
 
