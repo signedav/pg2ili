@@ -11,7 +11,7 @@ VERSION "2019-12-11" =
       avaluo2 : 0.00 .. 99999.99;
       avaluo3 : MANDATORY 0 .. 99999;
       avaluo4 : MANDATORY 0.00 .. 9999999999.99;
-      tipo : 0 .. 9999999999;
+      tipo : 1 .. 2147483647;
       comienzo_vida_util_version : MANDATORY INTERLIS.XMLDateTime;
       fin_vida_util_version : INTERLIS.XMLDateTime;
     END construccion;

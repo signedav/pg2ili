@@ -13,8 +13,8 @@ VERSION "2019-12-11" =
 
     CLASS fase_cartografica =
       simbolo : MANDATORY TEXT*8;
-      frag_sup : MANDATORY 0 .. 9999999999;
-      frag_suelo : MANDATORY 0 .. 9999999999;
+      frag_sup : MANDATORY 1 .. 2147483647;
+      frag_suelo : MANDATORY 1 .. 2147483647;
       capacidad : MANDATORY TEXT*50;
       vocacion : MANDATORY TEXT*50;
     END fase_cartografica;
@@ -64,20 +64,20 @@ VERSION "2019-12-11" =
     END amazonas;
 
     CLASS aptitud =
-      id_fase : 0 .. 9999999999;
+      id_fase : 1 .. 2147483647;
       sim_nuevo : TEXT*15;
       sim_anti : TEXT*15;
       fase : TEXT*8;
-      id_cultivo : 0 .. 9999999999;
+      id_cultivo : 1 .. 2147483647;
       nombre : TEXT*58;
       tipo : TEXT*21;
       localizacion : TEXT*150;
     END aptitud;
 
     CLASS drenaje_natural =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*50;
-      drenaje_vocacion : MANDATORY 0 .. 9999999999;
+      drenaje_vocacion : MANDATORY 1 .. 2147483647;
     END drenaje_natural;
 
     CLASS horizonte =
@@ -91,8 +91,8 @@ VERSION "2019-12-11" =
       pp : 0.00 .. 9999999999.99;
       kc : 0.00 .. 9999999999.99;
       ce : 0.00 .. 9999999999.99;
-      profundidad_inicial : MANDATORY 0 .. 9999999999;
-      profundidad_final : MANDATORY 0 .. 9999999999;
+      profundidad_inicial : MANDATORY 1 .. 2147483647;
+      profundidad_final : MANDATORY 1 .. 2147483647;
       sat_al : 0.00 .. 9999999999.99;
       nombre_corregido : TEXT*8;
       sat_sodio : 0.00 .. 9999999999.99;
@@ -100,20 +100,20 @@ VERSION "2019-12-11" =
 
     CLASS pendiente =
       letra : MANDATORY TEXT*1;
-      lim_inf : MANDATORY 0 .. 9999999999;
-      lim_sup : MANDATORY 0 .. 9999999999;
+      lim_inf : MANDATORY 1 .. 2147483647;
+      lim_sup : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*10;
-      valor_medio : MANDATORY 0 .. 9999999999;
+      valor_medio : MANDATORY 1 .. 2147483647;
     END pendiente;
 
     CLASS profundidad_efectiva =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*50;
-      valor_medio : MANDATORY 0 .. 9999999999;
+      valor_medio : MANDATORY 1 .. 2147483647;
     END profundidad_efectiva;
 
     CLASS capacidad =
-      id_fase_cartografica : MANDATORY 0 .. 9999999999;
+      id_fase_cartografica : MANDATORY 1 .. 2147483647;
       capacidad : MANDATORY TEXT*7;
       descripcion : MANDATORY TEXT*300;
     END capacidad;
@@ -137,13 +137,13 @@ VERSION "2019-12-11" =
     END color;
 
     CLASS erosion =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*12;
-      codigo_vocacion : 0 .. 9999999999;
+      codigo_vocacion : 1 .. 2147483647;
     END erosion;
 
     CLASS fertilidad =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*50;
       lim_sup : MANDATORY 0.00 .. 9999999999.99;
       valor_medio : MANDATORY 0.00 .. 9999999999.99;
@@ -161,27 +161,27 @@ VERSION "2019-12-11" =
     END textura;
 
     CLASS descripcion_observacion =
-      dia : MANDATORY 0 .. 9999999999;
-      mes : MANDATORY 0 .. 9999999999;
-      anio : MANDATORY 0 .. 9999999999;
-      tipo_observacion : MANDATORY 0 .. 9999999999;
+      dia : MANDATORY 1 .. 2147483647;
+      mes : MANDATORY 1 .. 2147483647;
+      anio : MANDATORY 1 .. 2147483647;
+      tipo_observacion : MANDATORY 1 .. 2147483647;
       numero_observacion : MANDATORY TEXT*10;
-      id_descriptor : MANDATORY 0 .. 9999999999;
+      id_descriptor : MANDATORY 1 .. 2147483647;
       sitio : TEXT*100;
-      altitud : MANDATORY 0 .. 9999999999;
+      altitud : MANDATORY 1 .. 2147483647;
       aerofotografia : MANDATORY TEXT*100;
       faja : TEXT*100;
-      id_paisaje : MANDATORY 0 .. 9999999999;
-      id_tipo_relieve : MANDATORY 0 .. 9999999999;
-      id_f_terreno : MANDATORY 0 .. 9999999999;
-      id_mat_parental : MANDATORY 0 .. 9999999999;
+      id_paisaje : MANDATORY 1 .. 2147483647;
+      id_tipo_relieve : MANDATORY 1 .. 2147483647;
+      id_f_terreno : MANDATORY 1 .. 2147483647;
+      id_mat_parental : MANDATORY 1 .. 2147483647;
       relieve : MANDATORY TEXT*100;
       diseccion : MANDATORY TEXT*100;
       microrelieve : MANDATORY TEXT*100;
       gradiente_pendiente : MANDATORY TEXT*100;
       longitud_pendiente : MANDATORY TEXT*100;
       forma_pendiente : MANDATORY TEXT*100;
-      id_clima : MANDATORY 0 .. 9999999999;
+      id_clima : MANDATORY 1 .. 2147483647;
       formacion_ecologica : MANDATORY TEXT*100;
       regimen_temperatura : MANDATORY TEXT*100;
       regimen_humedad : MANDATORY TEXT*100;
@@ -190,23 +190,23 @@ VERSION "2019-12-11" =
       grado_frecuencia_erosion : TEXT*100;
       evidencia_erosion : TEXT*100;
       clase_afloramiento_rocoso : TEXT*100;
-      p_superficie_cubierta : 0 .. 9999999999;
-      drenaje_interno : 0 .. 9999999999;
-      drenaje_externo : 0 .. 9999999999;
-      drenaje_natural : 0 .. 9999999999;
-      id_unidad_cartografica_medicion : MANDATORY 0 .. 9999999999;
+      p_superficie_cubierta : 1 .. 2147483647;
+      drenaje_interno : 1 .. 2147483647;
+      drenaje_externo : 1 .. 2147483647;
+      drenaje_natural : 1 .. 2147483647;
+      id_unidad_cartografica_medicion : MANDATORY 1 .. 2147483647;
       taxonomia : MANDATORY TEXT*100;
       h_superficial : TEXT*100;
       h_subsuperficial : TEXT*100;
       otras_caracteristicas : TEXT*255;
-      id_inundacion : MANDATORY 0 .. 9999999999;
+      id_inundacion : MANDATORY 1 .. 2147483647;
       duracion_inundacion : TEXT*100;
-      id_encharcamiento : MANDATORY 0 .. 9999999999;
+      id_encharcamiento : MANDATORY 1 .. 2147483647;
       duracion_encharcamiento : TEXT*100;
       naturaleza_nivel_freatico : TEXT*100;
-      profundidad : 0 .. 9999999999;
-      id_profundidad_efectiva : MANDATORY 0 .. 9999999999;
-      id_limitante_profundidad_efectiva : MANDATORY 0 .. 9999999999;
+      profundidad : 1 .. 2147483647;
+      id_profundidad_efectiva : MANDATORY 1 .. 2147483647;
+      id_limitante_profundidad_efectiva : MANDATORY 1 .. 2147483647;
       factor_limitante_profundidad : TEXT*100;
       vegetacion_natural : TEXT*100;
       uso_actual : TEXT*100;
@@ -214,13 +214,13 @@ VERSION "2019-12-11" =
       nombre_cultivos_pastos : TEXT*255;
       id_clase_agrologica : MANDATORY TEXT*255;
       id_subclase_agrologica : MANDATORY TEXT*255;
-      ancho_gritas : 0 .. 9999999999;
-      profundidad_gritas : 0 .. 9999999999;
-      volumen_plintita : 0 .. 9999999999;
-      fase_plintita : 0 .. 9999999999;
+      ancho_gritas : 1 .. 2147483647;
+      profundidad_gritas : 1 .. 2147483647;
+      volumen_plintita : 1 .. 2147483647;
+      fase_plintita : 1 .. 2147483647;
       evidencias_sales : TEXT*255;
       observaciones : TEXT*255;
-      id_tipo_observacion : MANDATORY 0 .. 9999999999;
+      id_tipo_observacion : MANDATORY 1 .. 2147483647;
       aux : TEXT*255;
       single_char : TEXT*1;
       single_character : TEXT*1;
@@ -243,7 +243,7 @@ VERSION "2019-12-11" =
     END encharcamiento;
 
     CLASS estructura =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*100;
     END estructura;
 
@@ -293,18 +293,18 @@ VERSION "2019-12-11" =
       p_representacion : 0.00 .. 9999999999.99;
       sim_nuevo : TEXT*15;
       simbolo_antiguo : TEXT*15;
-      id_tax : 0 .. 9999999999;
-      id_fase : 0 .. 9999999999;
-      id_perfil : 0 .. 9999999999;
+      id_tax : 1 .. 2147483647;
+      id_fase : 1 .. 2147483647;
+      id_perfil : 1 .. 2147483647;
       fase : TEXT*8;
       localizacion : TEXT*150;
-      id : 0 .. 9999999999;
+      id : 1 .. 2147483647;
       nombre : TEXT*100;
       fuente : TEXT*250;
     END leyenda_ini_;
 
     CLASS leyenda_nueva =
-      id : MANDATORY 0 .. 9999999999;
+      id : MANDATORY 1 .. 2147483647;
       paisaje : TEXT*150;
       clima : TEXT*100;
       mat_parental : TEXT*150;
@@ -323,7 +323,7 @@ VERSION "2019-12-11" =
     END leyenda_nueva;
 
     CLASS limitante_profundidad =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*70;
     END limitante_profundidad;
 
@@ -340,10 +340,10 @@ VERSION "2019-12-11" =
     END nomenclatura;
 
     CLASS observacion =
-      prof_inicial : MANDATORY 0 .. 9999999999;
-      prof_final : MANDATORY 0 .. 9999999999;
-      id_nomenclatura : MANDATORY 0 .. 9999999999;
-      id_color : MANDATORY 0 .. 9999999999;
+      prof_inicial : MANDATORY 1 .. 2147483647;
+      prof_final : MANDATORY 1 .. 2147483647;
+      id_nomenclatura : MANDATORY 1 .. 2147483647;
+      id_color : MANDATORY 1 .. 2147483647;
       texto : TEXT*120;
       tipo_fragmentos_roca : TEXT*120;
       forma_fragmentos_roca : TEXT*120;
@@ -351,7 +351,7 @@ VERSION "2019-12-11" =
       tipo_estructura : TEXT*120;
       clase_estructura : TEXT*120;
       grado_estructura : TEXT*120;
-      superficie_peds : 0 .. 9999999999;
+      superficie_peds : 1 .. 2147483647;
       clase_concentraciones : TEXT*120;
       campos_concentraciones : TEXT*120;
       consistencia_seco : TEXT*120;
@@ -360,7 +360,7 @@ VERSION "2019-12-11" =
       reaccion_hcl : TEXT*120;
       reaccion_naf : TEXT*120;
       reaccion_ph : TEXT*120;
-      id_descripcion_observacion : MANDATORY 0 .. 9999999999;
+      id_descripcion_observacion : MANDATORY 1 .. 2147483647;
     END observacion;
 
     CLASS paisaje =
@@ -374,24 +374,24 @@ VERSION "2019-12-11" =
 
     CLASS pedregosidad =
       descripcion : MANDATORY TEXT*2;
-      frag_sup : MANDATORY 0 .. 9999999999;
-      frag_suelo : MANDATORY 0 .. 9999999999;
+      frag_sup : MANDATORY 1 .. 2147483647;
+      frag_suelo : MANDATORY 1 .. 2147483647;
     END pedregosidad;
 
     CLASS perfil =
       codigo : TEXT*10;
       ucs : TEXT*10;
-      clima : 0 .. 9999999999;
-      pendiente : 0 .. 9999999999;
-      erosion : 0 .. 9999999999;
-      drenaje : 0 .. 9999999999;
-      frag_suelo : 0 .. 9999999999;
-      frag_sup : 0 .. 9999999999;
+      clima : 1 .. 2147483647;
+      pendiente : 1 .. 2147483647;
+      erosion : 1 .. 2147483647;
+      drenaje : 1 .. 2147483647;
+      frag_suelo : 1 .. 2147483647;
+      frag_sup : 1 .. 2147483647;
       inundacion : TEXT*20;
       fertilidad : 0.00 .. 9999999999.99;
-      id_profundidad_efectiva : 0 .. 9999999999;
-      id_clase_inundacion : 0 .. 9999999999;
-      id_paso_ucs_perfil : 0 .. 9999999999;
+      id_profundidad_efectiva : 1 .. 2147483647;
+      id_clase_inundacion : 1 .. 2147483647;
+      id_paso_ucs_perfil : 1 .. 2147483647;
     END perfil;
 
     CLASS quimica =
@@ -399,9 +399,9 @@ VERSION "2019-12-11" =
       profundidades : MANDATORY TEXT*15;
       simbolo : TEXT*20;
       descripcion : TEXT*255;
-      arena : MANDATORY 0 .. 9999999999;
-      limo : MANDATORY 0 .. 9999999999;
-      arcilla : MANDATORY 0 .. 9999999999;
+      arena : MANDATORY 1 .. 2147483647;
+      limo : MANDATORY 1 .. 2147483647;
+      arcilla : MANDATORY 1 .. 2147483647;
       textura : TEXT*10;
       ph : 0.00 .. 9999999999.99;
       aluminio : 0.00 .. 9999999999.99;
@@ -424,7 +424,7 @@ VERSION "2019-12-11" =
     END relieve;
 
     CLASS salinidad =
-      codigo : MANDATORY 0 .. 9999999999;
+      codigo : MANDATORY 1 .. 2147483647;
       descripcion : MANDATORY TEXT*50;
     END salinidad;
 
@@ -440,7 +440,7 @@ VERSION "2019-12-11" =
 
     CLASS suelo_completo_horizontes =
       estudio : TEXT*255;
-      id : 0 .. 9999999999;
+      id : 1 .. 2147483647;
       sim_nuevo : TEXT*255;
       simbolo_antiguo : TEXT*255;
       nombre : TEXT*255;
@@ -464,8 +464,8 @@ VERSION "2019-12-11" =
       inundabilidad : TEXT*255;
       horizonte : TEXT*255;
       textura : TEXT*255;
-      prof_inicial : 0 .. 9999999999;
-      prof_final : 0 .. 9999999999;
+      prof_inicial : 1 .. 2147483647;
+      prof_final : 1 .. 2147483647;
       estructura : TEXT*255;
       color : TEXT*255;
       ph : 0.00 .. 9999999999.99;
@@ -481,7 +481,7 @@ VERSION "2019-12-11" =
     END suelo_completo_horizontes;
 
     CLASS suelo_variables_fao =
-      id : 0 .. 9999999999;
+      id : 1 .. 2147483647;
       sim_nuevo : TEXT*255;
       sim_anti : TEXT*255;
       nombre : TEXT*255;
@@ -505,8 +505,8 @@ VERSION "2019-12-11" =
       inundabilidad : TEXT*40;
       horizonte : TEXT*8;
       textura : TEXT*30;
-      profundidad_inicial : 0 .. 9999999999;
-      profundidad_final : 0 .. 9999999999;
+      profundidad_inicial : 1 .. 2147483647;
+      profundidad_final : 1 .. 2147483647;
       estructura : TEXT*100;
       color : TEXT*50;
       ph : 0.00 .. 9999999999.99;
@@ -674,8 +674,8 @@ VERSION "2019-12-11" =
       ucs_perfil : MANDATORY TEXT*15;
       ucs : MANDATORY TEXT*5;
       perfil : MANDATORY TEXT*6;
-      porcentaje : 0 .. 9999999999;
-      id_ucs : 0 .. 9999999999;
+      porcentaje : 1 .. 2147483647;
+      id_ucs : 1 .. 2147483647;
     END;
 
   END My_Topic;

@@ -7,20 +7,20 @@ VERSION "2019-12-11" =
   TOPIC My_Topic =
       
     CLASS capacidad =
-      id_fase_cartografica : MANDATORY 0 .. 9999999999;
+      id_fase_cartografica : MANDATORY 1 .. 2147483647;
       capacidad : MANDATORY TEXT*7;
       descripcion : MANDATORY TEXT*300;
     END capacidad;
 
     CLASS fase_cartografica =
       simbolo : MANDATORY TEXT*8;
-      id_pendiente : MANDATORY 0 .. 9999999999;
-      id_pedregosidad : 0 .. 9999999999;
-      id_salinidad : 0 .. 9999999999;
-      id_erosion : 0 .. 9999999999;
-      id_inundabilidad : 0 .. 9999999999;
-      frag_sup : MANDATORY 0 .. 9999999999;
-      frag_suelo : MANDATORY 0 .. 9999999999;
+      id_pendiente : MANDATORY 1 .. 2147483647;
+      id_pedregosidad : 1 .. 2147483647;
+      id_salinidad : 1 .. 2147483647;
+      id_erosion : 1 .. 2147483647;
+      id_inundabilidad : 1 .. 2147483647;
+      frag_sup : MANDATORY 1 .. 2147483647;
+      frag_suelo : MANDATORY 1 .. 2147483647;
       capacidad : MANDATORY TEXT*50;
       vocacion : MANDATORY TEXT*50;
     END fase_cartografica;
@@ -31,7 +31,7 @@ VERSION "2019-12-11" =
       paisaje : MANDATORY TEXT*150;
       mat_parental : MANDATORY TEXT*150;
       localizacion : MANDATORY TEXT*150;
-      id_clima : MANDATORY 0 .. 9999999999;
+      id_clima : MANDATORY 1 .. 2147483647;
       fuente : TEXT*250;
       simbolo_antiguo : TEXT*15;
       simbolo : MANDATORY TEXT*6;

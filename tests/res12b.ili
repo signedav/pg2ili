@@ -8,16 +8,16 @@ VERSION "2019-12-11" =
   TOPIC My_Topic =
 
     CLASS a =
-      id : MANDATORY 0 .. 9999999999;
+      id : MANDATORY 1 .. 2147483647;
       any_value : 0.00 .. 99999999.99;
     END a;
 
     CLASS b =
-      id : MANDATORY 0 .. 9999999999;
+      id : MANDATORY 1 .. 2147483647;
     END b;
 
     CLASS polygons =
-      id : MANDATORY 0 .. 9999999999;
+      id : MANDATORY 1 .. 2147483647;
       geom : MANDATORY ISO19107_PLANAS_V1.GM_MultiSurface3D;
     END polygons;
 
@@ -29,7 +29,7 @@ VERSION "2019-12-11" =
     ASSOCIATION =
       role_a -- {0..*} a;
       role_b -- {0..*} b;
-      id : MANDATORY 0 .. 9999999999;
+      id : MANDATORY 1 .. 2147483647;
       name : TEXT*12;
     END;
 
