@@ -86,6 +86,9 @@ class PG2ILI:
     }
     NOT_NULL = "NOT NULL"
 
+    NUMERIC_RANGE = "1 .. 2147483647"
+    NUMERICPOINT_RANGE = "0.{} .. 9999999999.{}"
+
     def __init__(self, sql_file, model_name="My_Model", topic_name="My_Topic", omit_primary_keys=True):
         """
 
@@ -319,11 +322,11 @@ class PG2ILI:
             elif ili_type == "NUMERIC(p).n":
                 p, s = n.split(",")
         if ili_type == "NUMERIC":
-            res = "0 .. 9999999999"
+            res = self.NUMERIC_RANGE
         elif ili_type == "NUMERIC.":
-            res = "0.00 .. 9999999999.99"
+            res = self.NUMERICPOINT_RANGE.format("0" * int(2), "9" * int(2))
         elif ili_type == "NUMERIC.n":
-            res = "0.{} .. 9999999999.{}".format("0" * int(n), "9" * int(n))
+            res = self.NUMERICPOINT_RANGE.format("0" * int(n), "9" * int(n))
         elif ili_type == "NUMERIC(p).n":
             res = "0.{scale0} .. {before_decimal}.{scale9}".format(scale0="0" * int(s),
                                                                    scale9="9" * int(s),
