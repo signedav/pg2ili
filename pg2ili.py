@@ -59,9 +59,9 @@ class PG2ILI:
         "varchar(n)": "TEXT*n",
         "character(n)": "TEXT*n",
         "char(n)": "TEXT*n",
-        "text": "TEXT*255",
-        "character varying": "TEXT*255",
-        "varchar": "TEXT*255",
+        "text": "TEXT",
+        "character varying": "TEXT",
+        "varchar": "TEXT",
         "character": "TEXT*1",
         "char": "TEXT*1",
         "date": "INTERLIS.XMLDate",
@@ -343,8 +343,6 @@ class PG2ILI:
                                                                    before_decimal="9" * (int(p) - int(s)))
         elif ili_type == "NUMERIC(p)":
             res = "0 .. {}".format("9" * int(p))
-        elif ili_type == "TEXT":
-            res = "TEXT*255"
         elif ili_type == "TEXT*n":
             res = f"TEXT*{n}"
         elif ili_type == "GEOMETRY":
